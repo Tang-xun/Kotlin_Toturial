@@ -5,5 +5,5 @@
     <string name="permission_message">You must grant permission to access camera and external storage to run this application.</string>
     <string name="permission_warning">All permissions are required.</string>
     <string name="go_surface_view">photo with surface view</string>
-    <string name="go_expendable_list_view">expendable list view</string>
+    <string name="go_expandable_list_view">ExpandableListView</string>
 </resources>
