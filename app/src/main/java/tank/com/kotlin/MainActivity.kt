@@ -5,7 +5,6 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
-import tank.com.kotlin.R
 
 /**
  * tank.com.kotlin_demon <br/>
@@ -20,6 +19,10 @@ class MainActivity : AppCompatActivity() {
         Log.i(TAG, "onCreate ::: ")
         findViewById<Button>(R.id.goSurfaceViewBt).setOnClickListener {
             startActivity(Intent(applicationContext, SurfaceViewActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.goExpendViewBt).setOnClickListener {
+            startActivity(Intent(applicationContext, ExpandableListActivity::class.java))
         }
     }
 
