@@ -1,4 +1,4 @@
-package tank.com.kotlin_demon
+package tank.com.kotlin
 
 import android.Manifest.permission.CAMERA
 import android.Manifest.permission.WRITE_EXTERNAL_STORAGE
@@ -17,6 +17,7 @@ import android.view.SurfaceView
 import android.view.View
 import android.widget.Button
 import android.widget.Toast
+import tank.com.kotlin_demon.R
 import java.io.File
 import java.io.FileNotFoundException
 import java.io.FileOutputStream

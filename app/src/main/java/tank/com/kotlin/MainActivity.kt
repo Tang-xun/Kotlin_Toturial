@@ -1,10 +1,11 @@
-package tank.com.kotlin_demon
+package tank.com.kotlin
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
+import tank.com.kotlin_demon.R
 
 /**
  * tank.com.kotlin_demon <br/>

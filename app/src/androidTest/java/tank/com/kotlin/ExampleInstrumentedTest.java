@@ -1,4 +1,4 @@
-package tank.com.kotlin_demon;
+package tank.com.kotlin;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -20,7 +20,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
-
         assertEquals("tank.com.kotlin_demon", appContext.getPackageName());
     }
 }

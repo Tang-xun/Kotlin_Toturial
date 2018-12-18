@@ -1,4 +1,4 @@
-package tank.com.kotlin_demon;
+package tank.com.kotlin;
 
 import org.junit.Test;
 
