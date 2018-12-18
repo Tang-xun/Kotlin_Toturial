@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.widget.Button
-import tank.com.kotlin_demon.R
+import tank.com.kotlin.R
 
 /**
  * tank.com.kotlin_demon <br/>

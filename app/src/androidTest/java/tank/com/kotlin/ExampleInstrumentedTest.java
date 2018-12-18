@@ -20,6 +20,6 @@ public class ExampleInstrumentedTest {
     public void useAppContext() {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
-        assertEquals("tank.com.kotlin_demon", appContext.getPackageName());
+        assertEquals("tank.com.kotlin", appContext.getPackageName());
     }
 }
