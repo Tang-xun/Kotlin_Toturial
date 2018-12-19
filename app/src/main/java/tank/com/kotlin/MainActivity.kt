@@ -24,6 +24,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.goExpendViewBt).setOnClickListener {
             startActivity(Intent(applicationContext, ExpandableListActivity::class.java))
         }
+
+        findViewById<Button>(R.id.goRecyclerViewBt).setOnClickListener {
+            startActivity(Intent(applicationContext, RecyclerViewActivity::class.java))
+        }
     }
 
 }

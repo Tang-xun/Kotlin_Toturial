@@ -4,6 +4,13 @@
     <string name="permission_required">Permission Required</string>
     <string name="permission_message">You must grant permission to access camera and external storage to run this application.</string>
     <string name="permission_warning">All permissions are required.</string>
-    <string name="go_surface_view">photo with surface view</string>
-    <string name="go_expandable_list_view">ExpandableListView</string>
+    <string name="go_surface_view">Surface View</string>
+    <string name="go_expandable_list_view">ExpandableList View</string>
+    <string name="go_recycler_view">Recycler View</string>
+    <string name="menu_linear_vertical">Linear Vertical</string>
+    <string name="menu_linear_horizontal">Linear Horizontal</string>
+    <string name="menu_gridview_vertical">GridView Vertical</string>
+    <string name="menu_gridview_horizontal">GridView Horizontal</string>
+    <string name="menu_staggered_gridview_vertical">Staggered Gridview Vertical</string>
+    <string name="menu_staggered_gridview_horizontal">Staggered GridView Horizontal</string>
 </resources>

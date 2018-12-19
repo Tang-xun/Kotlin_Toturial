@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="show_permission_padding">20dp</dimen>
+    <dimen name="recycler_item_padding">2dp</dimen>
+    <dimen name="recycler_item_content_padding">14dp</dimen>
+    <dimen name="recycler_item_title_margin_bottom">15dp</dimen>
 </resources>
