@@ -18,15 +18,15 @@ import org.json.JSONObject
  */
 class QRCodeScanActivity : AppCompatActivity() {
 
-    internal var txtName: TextView? = null
+    private var txtName: TextView? = null
 
-    internal var txtSiteName: TextView? = null
+    private var txtSiteName: TextView? = null
 
-    internal var txtErrorMsg: TextView? = null
+    private var txtErrorMsg: TextView? = null
 
-    internal var qrScanBt: Button? = null
+    private var qrScanBt: Button? = null
 
-    internal var qrScanIntegrator: IntentIntegrator? = null
+    private var qrScanIntegrator: IntentIntegrator? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
