@@ -16,7 +16,6 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.main_activity)
-        Log.i(TAG, "onCreate ::: ")
         findViewById<Button>(R.id.goSurfaceViewBt).setOnClickListener {
             startActivity(Intent(applicationContext, SurfaceViewActivity::class.java))
         }
@@ -27,6 +26,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.goRecyclerViewBt).setOnClickListener {
             startActivity(Intent(applicationContext, RecyclerViewActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.goQRScanBt).setOnClickListener {
+            startActivity(Intent(applicationContext, QRCodeScanActivity::class.java))
         }
     }
 

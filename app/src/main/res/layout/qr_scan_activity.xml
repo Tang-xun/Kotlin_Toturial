@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="@dimen/qr_padding_medium">
+
+    <Button
+        android:id="@+id/scanBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/qr_padding_high"
+        android:text="@string/scan_qr_code" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/qr_padding_default"
+        android:text="@string/name" />
+
+    <TextView
+        android:id="@+id/qrName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/qr_padding_default"
+        android:text="@string/empty"
+        android:textStyle="bold|italic" />
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/qr_padding_default"
+        android:text="@string/site_name" />
+
+    <TextView
+        android:id="@+id/qrSiteName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/qr_padding_default"
+        android:text="@string/empty"
+        android:textStyle="bold|italic" />
+
+    <Button
+        android:id="@+id/showQrScannerBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/qr_padding_highest"
+        android:text="@string/show_scanner_from_fragment" />
+
+    <TextView
+        android:id="@+id/errorMsgShow"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="@dimen/qr_padding_default"
+        android:text="@string/empty"
+        android:textStyle="bold|italic"
+        android:visibility="gone" />
+
+</LinearLayout>
