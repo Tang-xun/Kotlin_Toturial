@@ -44,11 +44,12 @@ class QRCodeScanActivity : AppCompatActivity() {
 
         val showQrFrameBt: Button = findViewById(R.id.showQrScannerBt)
         showQrFrameBt.setOnClickListener {
-
+            startActivity(Intent(this, QRCodeSecondActivity::class.java))
         }
     }
 
     private fun performAction() {
+        qrScanIntegrator?.setPrompt(getString(R.string.scan_qr_code))
         qrScanIntegrator?.initiateScan()
     }
 
