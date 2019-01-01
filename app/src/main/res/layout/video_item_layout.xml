@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/rl_video"
+        android:layout_width="wrap_content"
+        android:layout_height="200dp"
+        android:background="@color/my_black">
+
+        <tank.com.kotlin.view.PlayTextureView
+            android:id="@+id/videoPlayTextureView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <ImageView
+            android:id="@+id/videoIvCover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+
+        <ProgressBar
+            android:id="@+id/videoProgressBar"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_centerInParent="true"
+            android:indeterminateTint="@color/white"
+            android:visibility="gone" />
+
+        <ImageView
+            android:id="@+id/videoIvPlayIcon"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/video_pause"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/videoTvTime"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/video_margin"
+            android:textColor="@color/white"
+            android:textSize="@dimen/video_detail_process_size" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/videoTvContent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/video_margin"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:textColor="@color/my_black"
+        android:textSize="@dimen/video_detail_content_size" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/video_margin">
+
+        <ImageView
+            android:id="@+id/videoIvAvatar"
+            android:layout_width="@dimen/video_avatar_size"
+            android:layout_height="@dimen/video_avatar_size"
+            android:layout_gravity="center_vertical"
+            android:src="@mipmap/avatar1"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/videoTvName"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:textColor="@color/my_black"
+            android:textSize="@dimen/video_detail_title_size" />
+    </LinearLayout>
+
+</LinearLayout>

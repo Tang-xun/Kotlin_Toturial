@@ -23,4 +23,8 @@
     <string name="result_not_found">Result not found</string>
     <string name="show_scanner_from_fragment">Show Scanner From Fragment</string>
     <string name="qr_scan_view">ZXING QRScan View</string>
+    <string name="txt_finish">finish</string>
+    <string name="loading_hint">正在确认中</string>
+    <string name="video_default_time">00:00 / 00:00</string>
+    <string name="ijkplayer_view">IJKPlayer View</string>
 </resources>

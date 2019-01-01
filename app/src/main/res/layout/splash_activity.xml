@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/adViewIv"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@mipmap/splash_01" />
+
+    <TextView
+        android:id="@+id/remainTimeTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="20dp"
+        android:padding="@dimen/qr_padding_default"
+        android:text="@string/empty"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</RelativeLayout>

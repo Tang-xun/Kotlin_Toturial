@@ -3,10 +3,7 @@ package tank.com.kotlin
 import android.content.Context
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
+import android.support.v7.widget.*
 import android.util.Log
 import android.view.*
 import android.widget.Toast
@@ -23,6 +20,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
     private var recyclerAdapter: RecyclerAdapter? = null
 
+    private var snapHelper: LinearSnapHelper? = null
+
     private var animals: ArrayList<Animal> = ArrayList<Animal>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,6 +35,8 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         recyclerAdapter = RecyclerAdapter(animals, R.layout.recycler_list_item)
         recyclerView!!.adapter = recyclerAdapter
+
+        snapHelper = LinearSnapHelper()
 
         recyclerView!!.addOnItemTouchListener(RecyclerTouchListener(applicationContext, recyclerView!!, object : IClickListener {
             override fun onClick(view: View, position: Int) {
@@ -84,6 +85,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         recyclerAdapter = RecyclerAdapter(animals, layoutId)
         recyclerView!!.adapter = recyclerAdapter
+        snapHelper!!.attachToRecyclerView(recyclerView)
 
         return super.onOptionsItemSelected(item)
     }
@@ -180,6 +182,16 @@ class RecyclerViewActivity : AppCompatActivity() {
 
         override fun onRequestDisallowInterceptTouchEvent(disallowIntercept: Boolean) {
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i(TAG, "onResume ${recyclerView?.childCount}")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i(TAG, "nPause ${recyclerView?.childCount}")
     }
 
     companion object {

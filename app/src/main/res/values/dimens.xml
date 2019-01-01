@@ -10,4 +10,19 @@
     <dimen name="qr_padding_default">10dp</dimen>
     <dimen name="qr_padding_low">5dp</dimen>
     <dimen name="qr_padding_highest">40dp</dimen>
+
+    <dimen name="video_slide_move">10dp</dimen>
+    <dimen name="video_slide_click">5dp</dimen>
+    <dimen name="dialog_padding">20dp</dimen>
+    <dimen name="dialog_margin">20dp</dimen>
+    <dimen name="dialog_text_size">19sp</dimen>
+    <dimen name="video_margin">10dp</dimen>
+    <dimen name="video_close_size">48dp</dimen>
+    <dimen name="video_close_padding">18dp</dimen>
+    <dimen name="video_pb_size">30dp</dimen>
+    <dimen name="video_detail_content_size">12sp</dimen>
+    <dimen name="video_detail_title_size">14sp</dimen>
+    <dimen name="video_detail_process_size">16sp</dimen>
+    <dimen name="video_avatar_size">30dp</dimen>
+
 </resources>

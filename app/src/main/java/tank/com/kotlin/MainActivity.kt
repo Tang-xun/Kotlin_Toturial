@@ -11,7 +11,10 @@ import android.widget.Button
  * Created by tank325 on 2018/12/18/4:09 PM.
  */
 class MainActivity : AppCompatActivity() {
-    private val TAG: String = MainActivity::class.java.simpleName
+
+    companion object {
+        val TAG: String = MainActivity::class.java.simpleName
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,10 @@ class MainActivity : AppCompatActivity() {
 
         findViewById<Button>(R.id.goQRScanBt).setOnClickListener {
             startActivity(Intent(applicationContext, QRCodeScanActivity::class.java))
+        }
+
+        findViewById<Button>(R.id.goIJKPlayer).setOnClickListener {
+            startActivity(Intent(applicationContext, IJKPlayerActivity::class.java))
         }
     }
 

@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/my_black">
+
+    <tank.com.kotlin.view.VideoTouchView
+        android:id="@+id/vdTouchView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerInParent="true">
+
+        <tank.com.kotlin.view.PlayTextureView
+            android:id="@+id/vdPtv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center" />
+
+        <ImageView
+            android:id="@+id/vdIvCover"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            tools:ignore="ContentDescription" />
+    </tank.com.kotlin.view.VideoTouchView>
+
+    <ProgressBar
+        android:id="@+id/vdLoadProcess"
+        android:layout_width="@dimen/video_pb_size"
+        android:layout_height="@dimen/video_pb_size"
+        android:layout_centerInParent="true"
+        android:indeterminateTint="@color/white" />
+
+    <ProgressBar
+        android:id="@+id/vdPlayProcess"
+        style="@style/Widget.AppCompat.ProgressBar.Horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:background="@drawable/progressbar_with_buffer"
+        android:max="100" />
+
+    <TextView
+        android:id="@+id/vdTvProcess"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_alignParentEnd="true"
+        android:layout_marginEnd="18dp"
+        android:gravity="center"
+        android:textColor="@color/white"
+        android:textSize="@dimen/video_detail_title_size" />
+
+    <ImageView
+        android:id="@+id/vdIvAnimation"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_centerInParent="true" />
+
+    <RelativeLayout
+        android:id="@+id/vdRlProcess"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/black_45_trans40"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/vdRlIvProcess"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@mipmap/video_fast_forward"
+            tools:ignore="ContentDescription" />
+
+        <TextView
+            android:id="@+id/vdRlTvProcess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/vdRlIvProcess"
+            android:layout_centerHorizontal="true"
+            android:text="@string/video_default_time"
+            android:textColor="@color/white"
+            android:textSize="@dimen/video_detail_process_size" />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:orientation="vertical"
+        android:padding="18dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <ImageView
+                android:id="@+id/vdIvAvatar"
+                android:layout_width="@dimen/video_avatar_size"
+                android:layout_height="@dimen/video_avatar_size"
+                tools:ignore="ContentDescription" />
+
+            <TextView
+                android:id="@+id/vdTvName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="5dp"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/vdTvContent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/video_margin"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:textColor="@color/white"
+            android:textSize="12sp" />
+
+
+    </LinearLayout>
+
+</RelativeLayout>

@@ -12,7 +12,7 @@ import tank.com.kotlin.model.Animal
  * tank.com.kotlin.adapter <br/>
  * Created by tank325 on 2018/12/19/10:33 AM.
  */
-class RecyclerAdapter(animals: ArrayList<Animal>, layoutId: Int) : RecyclerView.Adapter<RecyclerAdapter.AnimalViewHolder>() {
+open class RecyclerAdapter(animals: ArrayList<Animal>, layoutId: Int) : RecyclerView.Adapter<RecyclerAdapter.AnimalViewHolder>() {
 
     private var listAnimal: List<Animal>? = null
 
