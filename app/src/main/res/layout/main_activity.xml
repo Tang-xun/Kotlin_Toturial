@@ -5,13 +5,14 @@
     android:orientation="vertical">
 
     <Button
-        android:layout_marginTop="@dimen/show_permission_padding"
         android:id="@+id/goSurfaceViewBt"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/show_permission_padding"
+        android:layout_marginTop="@dimen/show_permission_padding"
         android:layout_marginRight="@dimen/show_permission_padding"
         android:text="@string/go_surface_view" />
+
 
     <Button
         android:id="@+id/goExpendViewBt"
@@ -44,5 +45,9 @@
         android:layout_marginLeft="@dimen/show_permission_padding"
         android:layout_marginRight="@dimen/show_permission_padding"
         android:text="@string/ijkplayer_view" />
+
+    <tank.com.kotlin.view.AlignRecyclerViewEditor
+        android:layout_width="match_parent"
+        android:layout_height="60dp" />
 
 </LinearLayout>
