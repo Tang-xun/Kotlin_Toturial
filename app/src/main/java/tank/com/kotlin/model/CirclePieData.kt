@@ -21,7 +21,7 @@ class CirclePieData(@NotNull name: String, @NotNull value: Float) {
         get() = field
 
     override fun toString(): String {
-        return "CirclePieData(name='$name', parent=$parent, value=$value color=$color angle=$angle)"
+        return "CirclePieData(name='$name', parent=$parent, value=$value color=0X${color.toString(16).toUpperCase()} angle=$angle)"
     }
 
 
