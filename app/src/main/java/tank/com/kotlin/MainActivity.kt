@@ -38,6 +38,9 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.goIJKPlayer).setOnClickListener {
             startActivity(Intent(applicationContext, IJKPlayerActivity::class.java))
         }
+        findViewById<Button>(R.id.goCirclePieView).setOnClickListener {
+            startActivity(Intent(applicationContext, CirclePieActivity::class.java))
+        }
     }
 
 }

@@ -46,6 +46,14 @@
         android:layout_marginRight="@dimen/show_permission_padding"
         android:text="@string/ijkplayer_view" />
 
+    <Button
+        android:id="@+id/goCirclePieView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/show_permission_padding"
+        android:layout_marginRight="@dimen/show_permission_padding"
+        android:text="@string/circle_pie_view" />
+
     <tank.com.kotlin.view.AlignRecyclerViewEditor
         android:layout_width="match_parent"
         android:layout_height="60dp" />

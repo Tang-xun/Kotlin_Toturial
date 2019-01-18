@@ -11,6 +11,5 @@
     <declare-styleable name="AlignRecyclerViewEditor">
         <attr name="width" format="dimension"/>
         <attr name="height" format="dimension"/>
-        <attr name="background" format="color"/>
     </declare-styleable>
 </resources>
