@@ -42,6 +42,7 @@
             android:launchMode="singleTask" />
         <activity android:name=".IJKPlayerActivity" />
         <activity android:name=".VideoDetailActivity" />
+        <activity android:name=".CirclePieActivity" />
 
 
     </application>

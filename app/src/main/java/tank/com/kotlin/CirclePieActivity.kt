@@ -8,10 +8,7 @@ import tank.com.kotlin.view.CirclePieView
 
 class CirclePieActivity : AppCompatActivity() {
 
-    val names: List<String> = arrayListOf("Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun")
-    var values: FloatArray = floatArrayOf(10f, 12f, 32f, 23f, 33f, 5f, 1f)
-
-    var mCirclePieView: CirclePieView? = null
+    private var mCirclePieView: CirclePieView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,10 +19,10 @@ class CirclePieActivity : AppCompatActivity() {
 
     private fun initData() {
         Log.i(TAG, "initData start ==> ")
-        var start = System.currentTimeMillis()
-        var pieData: ArrayList<CirclePieData> = ArrayList()
-        for (i in 0..names.size) {
-            pieData.add(CirclePieData(names[i], values[i]))
+        val start = System.currentTimeMillis()
+        val pieData: ArrayList<CirclePieData> = ArrayList()
+        for (i in 0 until 20) {
+            pieData.add(CirclePieData(i.toString(), 1f))
         }
         Log.i(TAG, "initData finish ==> $pieData ${System.currentTimeMillis() - start}ms")
 

@@ -54,8 +54,4 @@
         android:layout_marginRight="@dimen/show_permission_padding"
         android:text="@string/circle_pie_view" />
 
-    <tank.com.kotlin.view.AlignRecyclerViewEditor
-        android:layout_width="match_parent"
-        android:layout_height="60dp" />
-
 </LinearLayout>

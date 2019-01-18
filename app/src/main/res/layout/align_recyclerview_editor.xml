@@ -8,14 +8,14 @@
         android:id="@+id/cut_time_line"
         android:layout_width="100dp"
         android:layout_height="60dp"
-        android:background="@drawable/hollow_rectangle_bg"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:background="@drawable/hollow_rectangle_bg" />
 
     <android.support.v7.widget.RecyclerView
         android:id="@+id/pic_frame_layout"
-        android:overScrollMode="always"
-        android:orientation="horizontal"
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_centerInParent="true" />
+        android:layout_centerInParent="true"
+        android:orientation="horizontal"
+        android:overScrollMode="always" />
 </RelativeLayout>
