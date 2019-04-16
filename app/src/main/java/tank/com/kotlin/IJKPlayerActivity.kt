@@ -7,6 +7,7 @@ import android.support.v7.widget.LinearSnapHelper
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
+import com.yanzhenjie.permission.AndPermission
 import tank.com.kotlin.adapter.MainVideoAdapter
 import tank.com.kotlin.customer.BaseActivity
 import tank.com.kotlin.model.MainVideoBean
@@ -67,13 +68,13 @@ open class IJKPlayerActivity : BaseActivity() {
         })
 
         // 申请文件读写权限
-//        AndPermission.with(this)
-//                .permission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
-//                .onDenied {
-//                    Log.i(TAG, "onDenied -> $it")
-//                }.onGranted {
-//                    Log.i(TAG, "onGranted -> $it")
-//                }.start()
+        AndPermission.with(this)
+                .permission(android.Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                .onDenied {
+                    Log.i(TAG, "onDenied -> $it")
+                }.onGranted {
+                    Log.i(TAG, "onGranted -> $it")
+                }.start()
     }
 
     var currentPlayView: View? = null

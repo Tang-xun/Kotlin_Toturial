@@ -83,13 +83,13 @@ class ExpandableListActivity : AppCompatActivity() {
 
             adapter = CustomExpandableListAdapter(this, titleList as ArrayList<String>, listData)
 
-            expandableLv!!.setAdapter(adapter)
+            expandableLv?.setAdapter(adapter)
 
-            expandableLv!!.setOnGroupExpandListener { groupPosition -> Toast.makeText(applicationContext, "${(titleList as ArrayList)[groupPosition]} expanded", Toast.LENGTH_LONG).show() }
+            expandableLv?.setOnGroupExpandListener { groupPosition -> Toast.makeText(applicationContext, "${(titleList as ArrayList)[groupPosition]} expanded", Toast.LENGTH_LONG).show() }
 
-            expandableLv!!.setOnGroupCollapseListener { groupPosition -> Toast.makeText(applicationContext, "${(titleList as ArrayList)[groupPosition]} collapsed", Toast.LENGTH_LONG).show() }
+            expandableLv?.setOnGroupCollapseListener { groupPosition -> Toast.makeText(applicationContext, "${(titleList as ArrayList)[groupPosition]} collapsed", Toast.LENGTH_LONG).show() }
 
-            expandableLv!!.setOnChildClickListener { parent, v, groupPosition, childPosition, id ->
+            expandableLv?.setOnChildClickListener { _, _, groupPosition, childPosition, _ ->
                 val title = (titleList as ArrayList<String>)[groupPosition]
                 val child = listData[(titleList as ArrayList<String>)[groupPosition]]!![childPosition]
                 Toast.makeText(applicationContext, "Clicked: $title -> $child", Toast.LENGTH_LONG).show()

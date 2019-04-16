@@ -1,6 +1,5 @@
 package tank.com.kotlin.model
 
-import android.support.annotation.IntegerRes
 import org.jetbrains.annotations.NotNull
 
 class CirclePieData(@NotNull name: String, @NotNull value: Float) {

@@ -1,5 +1,6 @@
 package tank.com.kotlin.utils
 
+import android.arch.lifecycle.MutableLiveData
 import android.graphics.SurfaceTexture
 import android.os.Binder
 import android.os.Handler
@@ -21,9 +22,7 @@ class MediaPlayerTool private constructor() : IMediaPlayer.OnCompletionListener,
     private var mMediaPlayer: IMediaPlayer? = null
 
     var mVideoListener: VideoListener? = null
-        set(value) {
-            field = value
-        }
+        set(value)  {field = value}
 
     private var mSurfaceTexture: SurfaceTexture? = null
     // 记录上次播放器的hashcode

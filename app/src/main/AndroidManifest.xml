@@ -24,7 +24,7 @@
         <activity android:name=".RecyclerViewActivity" />
         <activity android:name=".QRCodeScanActivity" />
         <!--solve the landscape and portrait mode change -->
-        <activity android:name=".SplashScreenActivityJ">
+        <activity android:name=".SplashScreenActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -43,6 +43,8 @@
         <activity android:name=".IJKPlayerActivity" />
         <activity android:name=".VideoDetailActivity" />
         <activity android:name=".CirclePieActivity" />
+        <activity android:name=".KotlinCoroutineActivity" />
+        <activity android:name=".RectProcessActivity" />
 
 
     </application>

@@ -220,7 +220,7 @@ class VideoDetailActivity : BaseActivity() {
         }
     }
 
-    var isFirst = true
+    private var isFirst = true
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
         super.onWindowFocusChanged(hasFocus)
@@ -235,12 +235,12 @@ class VideoDetailActivity : BaseActivity() {
         }
     }
 
-    private var dontPause: Boolean? = null
+    private var donotPause: Boolean? = null
 
     override fun onPause() {
         super.onPause()
         if (mediaPlayerTool.isPlaying()) {
-            if (dontPause!!) {
+            if (donotPause!!) {
                 val snapView: View? = pagerSnapHelper?.findSnapView(linearLayoutManager)
                 if (snapView != null && linearLayoutManager?.getPosition(snapView) != playPosition) {
                     mediaPlayerTool.reset()
@@ -253,7 +253,7 @@ class VideoDetailActivity : BaseActivity() {
 
     override fun finish() {
         super.finish()
-        dontPause = true
+        donotPause = true
     }
 
 }

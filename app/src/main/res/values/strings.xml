@@ -28,4 +28,7 @@
     <string name="video_default_time">00:00 / 00:00</string>
     <string name="ijkplayer_view">IJKPlayer View</string>
     <string name="circle_pie_view">Circle Pie View</string>
+    <string name="process_change_bt">change</string>
+    <string name="picker_date">Picker Date</string>
+    <string name="rect_process_view">Rect Process View</string>
 </resources>
