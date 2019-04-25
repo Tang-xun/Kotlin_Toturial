@@ -6,9 +6,11 @@
 
     <ImageView
         android:id="@+id/video_pre_iv"
-        android:layout_width="300dp"
+        android:layout_width="match_parent"
         android:layout_height="400dp"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="50dp"
+        android:layout_marginEnd="30dp"
         android:src="@color/bg_item"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -18,17 +20,20 @@
     <LinearLayout
         android:id="@+id/video_thumbnail_ll"
         android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_margin="30dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="30dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="@id/video_pre_iv"
+        app:layout_constraintStart_toStartOf="@id/video_pre_iv"
         app:layout_constraintTop_toBottomOf="@id/video_pre_iv" />
 
     <ImageView
         android:id="@+id/video_thumbnail_select"
         android:layout_width="48dp"
         android:layout_height="48dp"
+
         android:background="@drawable/video_select_bg"
         app:layout_constraintBottom_toBottomOf="@id/video_thumbnail_ll"
         app:layout_constraintStart_toStartOf="@id/video_thumbnail_ll" />

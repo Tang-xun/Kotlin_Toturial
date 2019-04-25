@@ -8,7 +8,7 @@ import tank.com.kotlin.model.VideoCacheBean
 class VideoCacheDBUtil {
 
     companion object {
-        private val liteOrmDb: LiteOrm = LiteOrm.newSingleInstance(MainApplication.mContext, "VideoCacheDB")
+        private val liteOrmDb: LiteOrm = LiteOrm.newSingleInstance(MainApplication.mainApplication, "VideoCacheDB")
 
         public fun save(bean: VideoCacheBean?) {
             liteOrmDb.save(bean)

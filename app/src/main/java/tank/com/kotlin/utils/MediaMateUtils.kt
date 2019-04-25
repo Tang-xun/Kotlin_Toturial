@@ -13,7 +13,7 @@ import android.util.Log
 class MediaMateUtils {
 
     companion object {
-        val TAG = MediaMateUtils::class.java.simpleName
+        private const val TAG = "MediaMateUtils"
 
         /**
          * @param context
@@ -31,10 +31,13 @@ class MediaMateUtils {
             val isHttpUri: Boolean = path?.startsWith("http") ?: false
 
             val frameList: MutableList<Bitmap> = mutableListOf()
+
             val retriever = MediaMetadataRetriever()
 
             retriever.apply {
+
                 if (isHttpUri) setDataSource(context, Uri.parse(path)) else setDataSource(path)
+
                 duration = extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLong() ?: 0
             }
 
@@ -46,28 +49,34 @@ class MediaMateUtils {
 
             retriever.let {
                 for (i: Long in 0 until duration step frameStep) {
+                    Log.i(TAG, "$i --> $frameStep")
                     frameList.add(it.getFrameAtTime(i * 1000L, MediaMetadataRetriever.OPTION_CLOSEST_SYNC))
                 }
                 it.release()
             }
-
             return frameList
         }
 
         fun fetchFirstFrame(context: Context, path: String?, width: Int, height: Int): Bitmap? {
-
             val isHttpUri: Boolean = path?.startsWith("http") ?: false
 
-            val isInvalidPath: Boolean = path?.isEmpty() ?: true
-
-            if (isInvalidPath) return null
+            if (path?.isEmpty() == true) return null
 
             val retriever = MediaMetadataRetriever()
+
 
             var firstFrame: Bitmap
 
             retriever.apply {
-                if (isHttpUri) setDataSource(context.applicationContext, Uri.parse(path)) else setDataSource(path)
+                if (isHttpUri) {
+                    setDataSource(context.applicationContext, Uri.parse(path))
+                } else {
+                    setDataSource(path)
+                }
+
+                for (index in 0..25) {
+                    Log.i(TAG, "$index -> ${this.extractMetadata(index)}")
+                }
             }.let {
                 firstFrame = it.getFrameAtTime(0, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
                 it.release()
