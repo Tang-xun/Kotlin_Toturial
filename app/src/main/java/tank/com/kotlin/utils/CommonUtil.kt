@@ -2,7 +2,6 @@ package tank.com.kotlin.utils
 
 import android.content.Context
 import android.util.DisplayMetrics
-import android.util.Log
 import android.view.WindowManager
 import tank.com.kotlin.MainApplication
 import java.math.BigInteger
@@ -56,21 +55,29 @@ class CommonUtil {
         }
 
         fun width(): Int {
-            val wm: WindowManager = MainApplication.mContext!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            val wm: WindowManager = MainApplication.mainApplication!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             return wm.defaultDisplay.width
         }
 
         fun height(): Int {
-            val wm: WindowManager = MainApplication.mContext!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            val wm: WindowManager = MainApplication.mainApplication!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             return wm.defaultDisplay.height
         }
 
 
         private fun fetchDisplayMetrics(): DisplayMetrics {
-            val wm: WindowManager = MainApplication.mContext!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            val wm: WindowManager = MainApplication.mainApplication!!.getSystemService(Context.WINDOW_SERVICE) as WindowManager
             val metrics = DisplayMetrics()
             wm.defaultDisplay.getMetrics(metrics)
             return metrics
+        }
+
+        fun dip2Px(dip: Int): Int {
+            return (fetchDisplayMetrics().density * dip + 0.5f).toInt()
+        }
+
+        fun px2Dip(px: Int): Int {
+            return (px / fetchDisplayMetrics().density + 0.5f).toInt()
         }
 
     }

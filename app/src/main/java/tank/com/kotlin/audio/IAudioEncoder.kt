@@ -53,6 +53,22 @@ abstract class IAudioEncoder(rawAudioFile: String?) {
         }
     }
 
+    /**
+     * is video truck
+     * @param mime truck format mime
+     */
+    fun isVideoTruck(mime: String?): Boolean {
+        return mime?.startsWith("video/") ?: false
+    }
+
+    /**
+     * is audio truck
+     * @param mime truck format mime
+     */
+    fun isAudioTruck(mime: String?): Boolean {
+        return mime?.startsWith("audio/") ?: false
+    }
+
     enum class EncodeStateType(v: Int) {
         Process(1), Complete(2), Error(2)
     }
@@ -65,4 +81,5 @@ abstract class IAudioEncoder(rawAudioFile: String?) {
 
         fun onEncoderProcess(process: Int, msg: String)
     }
+
 }

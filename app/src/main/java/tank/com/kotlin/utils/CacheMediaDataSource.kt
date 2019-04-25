@@ -151,7 +151,7 @@ class CacheMediaDataSource(url: String) : IMediaDataSource {
     private fun deleteFileByPosition(position: Long) {
         var index = position
         val inputStream = FileInputStream(localVideoFile)
-        val tempFile: File = VideoLRUCacheUtil.createTempFile(MainApplication.mContext)
+        val tempFile: File = VideoLRUCacheUtil.createTempFile(MainApplication.mainApplication)
         val output = FileOutputStream(tempFile)
 
         val buf = ByteArray(MAX_BUFFER_SIZE)
@@ -197,7 +197,7 @@ class CacheMediaDataSource(url: String) : IMediaDataSource {
         } else {
             isCacheVideo = false
             networkStream = openHttpClient(0)
-            localVideoFile = VideoLRUCacheUtil.createCacheFile(MainApplication.mContext!!, mMd5, contentLength!!)
+            localVideoFile = VideoLRUCacheUtil.createCacheFile(MainApplication.mainApplication!!, mMd5, contentLength!!)
         }
         localStream = RandomAccessFile(localVideoFile, "rw")
     }

@@ -45,6 +45,7 @@
         <activity android:name=".CirclePieActivity" />
         <activity android:name=".KotlinCoroutineActivity" />
         <activity android:name=".RectProcessActivity" />
+        <activity android:name=".VideoFrameActivity" />
 
 
     </application>
