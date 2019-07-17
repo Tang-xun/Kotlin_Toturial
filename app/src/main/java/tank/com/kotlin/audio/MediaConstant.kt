@@ -9,6 +9,10 @@ class MediaConstant {
     object Constant{
         // invalid media index
         const val MEDIA_INVALID_INDEX = -1
+        // MediaCodec dequeueInputBuffer
+        const val MEDIA_READ_TIMEOUT = 10000
+
+        const val MEDIA_ACC_HEAD_LENGTH = 7
     }
 
     object Errors {

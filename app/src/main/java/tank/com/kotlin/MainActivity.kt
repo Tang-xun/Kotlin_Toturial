@@ -71,6 +71,10 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.goVideoFrame).setOnClickListener {
             startActivity(Intent(applicationContext, VideoFrameActivity::class.java))
         }
+        findViewById<Button>(R.id.goImageCrop).setOnClickListener {
+            startActivity(Intent(applicationContext, ImageCropActivity::class.java))
+        }
+
     }
 
     private fun showPvDatePicker() {

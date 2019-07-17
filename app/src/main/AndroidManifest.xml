@@ -46,6 +46,7 @@
         <activity android:name=".KotlinCoroutineActivity" />
         <activity android:name=".RectProcessActivity" />
         <activity android:name=".VideoFrameActivity" />
+        <activity android:name=".ImageCropActivity" />
 
 
     </application>
