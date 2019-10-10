@@ -7,4 +7,4 @@ this project is reference android developer network's examples
 ### ref on https://github.com/Zhaoss/VideoPlayerDemo but with kotlin 
 
 
-
+- develop on develop branch 
