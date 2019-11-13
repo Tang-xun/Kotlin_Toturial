@@ -12,6 +12,7 @@ android {
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
 
         ndk {
+            moduleName "native-lib"
             abiFilters 'x86', 'x86_64', 'armeabi'
         }
     }
