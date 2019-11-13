@@ -1,7 +1,7 @@
 package tank.com.kotlin
 
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.util.Log
 import tank.com.kotlin.model.CirclePieData
 import tank.com.kotlin.view.CirclePieView

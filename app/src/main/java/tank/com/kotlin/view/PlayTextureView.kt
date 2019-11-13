@@ -111,6 +111,7 @@ class PlayTextureView(context: Context, attrs: AttributeSet?, defStyleAttr: Int)
 
     fun getSurfaceTexture(): SurfaceTexture? {
         mSurfaceTexture?.let { return it }
+        return null
     }
 
 }
