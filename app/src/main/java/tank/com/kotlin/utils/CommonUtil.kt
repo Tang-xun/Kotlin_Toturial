@@ -14,7 +14,7 @@ fun String.md5(): String {
 
 class CommonUtil {
     companion object {
-        val TAG = CommonUtil::class.java.simpleName
+        val TAG: String = CommonUtil::class.java.simpleName
         fun toMMSS(time: Long): String {
             if (time <= 0) {
                 return "00:00"

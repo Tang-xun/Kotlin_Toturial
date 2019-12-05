@@ -9,6 +9,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.Window
 import android.view.WindowManager
+import androidx.annotation.RequiresApi
 import com.google.zxing.client.result.VINParsedResult
 import tank.com.kotlin.R
 import java.lang.Exception
@@ -73,6 +74,7 @@ class StatusBarUtil {
             rootView.clipToPadding = true
         }
 
+        @RequiresApi(Build.VERSION_CODES.O)
         fun setStatusBarColor(activity: Activity, color: Int, isFrontColorDark: Boolean) {
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
                 var defaultColor: Int = color
@@ -166,6 +168,7 @@ class StatusBarUtil {
             return statusBarHeight
         }
 
+        @RequiresApi(Build.VERSION_CODES.O)
         fun setAndroidStatusTextColor(activity: Activity, isFrontColorDark: Boolean) {
             if (Build.VERSION.SDK_INT > Build.VERSION_CODES.M) {
                 activity.window.decorView.systemUiVisibility = if (isFrontColorDark) {

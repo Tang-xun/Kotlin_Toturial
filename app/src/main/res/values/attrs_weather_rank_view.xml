@@ -1,0 +1,8 @@
+<resources>
+    <declare-styleable name="WeatherRankView">
+        <attr name="nickName" format="string"/>
+        <attr name="nickNameSize" format="dimension"/>
+        <attr name="nickNameColor" format="color"/>
+        <attr name="contentColor" format="color"/>
+    </declare-styleable>
+</resources>

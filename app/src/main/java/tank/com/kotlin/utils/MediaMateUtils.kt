@@ -5,6 +5,7 @@ import android.graphics.Bitmap
 import android.media.MediaMetadataRetriever
 import android.net.Uri
 import android.util.Log
+import java.lang.IllegalStateException
 
 /**
  *  @author:    tank
@@ -14,6 +15,7 @@ class MediaMateUtils {
 
     companion object {
         private const val TAG = "MediaMateUtils"
+        private const val PREFIX_HTTP = "http"
 
         /**
          * @param context
@@ -22,31 +24,26 @@ class MediaMateUtils {
          */
         fun fetchVideoFrame(context: Context, frameCount: Int, path: String?): MutableList<Bitmap>? {
 
-            var duration: Long
-
             val isInvalidPath: Boolean = path?.isEmpty() ?: true
 
             if (isInvalidPath) return null
-
-            val isHttpUri: Boolean = path?.startsWith("http") ?: false
+            val isHttpUri: Boolean = path?.startsWith(PREFIX_HTTP) ?: false
 
             val frameList: MutableList<Bitmap> = mutableListOf()
-
             val retriever = MediaMetadataRetriever()
 
+            var duration: Long
             retriever.apply {
-
                 if (isHttpUri) setDataSource(context, Uri.parse(path)) else setDataSource(path)
-
                 duration = extractMetadata(MediaMetadataRetriever.METADATA_KEY_DURATION)?.toLong() ?: 0
             }
 
             if (duration == 0L) {
-                Log.i(TAG, "video duration is null , check pls")
+                Log.i(TAG ,"video duration is null , check pls")
+                throw IllegalStateException("video duration is null , check pls")
             }
 
             val frameStep: Long = duration / frameCount
-
             retriever.let {
                 for (i: Long in 0 until duration step frameStep) {
                     Log.i(TAG, "$i --> $frameStep")
@@ -58,22 +55,17 @@ class MediaMateUtils {
         }
 
         fun fetchFirstFrame(context: Context, path: String?, width: Int, height: Int): Bitmap? {
-            val isHttpUri: Boolean = path?.startsWith("http") ?: false
+            val isHttpUri: Boolean = path?.startsWith(PREFIX_HTTP) ?: false
 
             if (path?.isEmpty() == true) return null
-
             val retriever = MediaMetadataRetriever()
-
-
             var firstFrame: Bitmap
-
             retriever.apply {
                 if (isHttpUri) {
                     setDataSource(context.applicationContext, Uri.parse(path))
                 } else {
                     setDataSource(path)
                 }
-
                 for (index in 0..25) {
                     Log.i(TAG, "$index -> ${this.extractMetadata(index)}")
                 }
@@ -81,11 +73,8 @@ class MediaMateUtils {
                 firstFrame = it.getFrameAtTime(0, MediaMetadataRetriever.OPTION_CLOSEST_SYNC)
                 it.release()
             }
-
             return firstFrame
         }
-
     }
-
 
 }

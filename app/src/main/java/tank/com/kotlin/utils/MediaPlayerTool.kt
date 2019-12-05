@@ -1,13 +1,11 @@
 package tank.com.kotlin.utils
 
-import androidx.lifecycle.MutableLiveData
 import android.graphics.SurfaceTexture
 import android.os.Binder
 import android.os.Handler
 import android.os.Looper
 import android.os.Message
 import android.view.Surface
-import tank.com.kotlin.model.MainVideoBean
 import tank.com.kotlin.view.PlayTextureView
 import tv.danmaku.ijk.media.player.AndroidMediaPlayer
 import tv.danmaku.ijk.media.player.IMediaPlayer
@@ -145,7 +143,7 @@ class MediaPlayerTool private constructor() : IMediaPlayer.OnCompletionListener,
         }
     }
 
-    fun cleanTextureViewParent() {
+    private fun cleanTextureViewParent() {
         mPlayTextViewSoftRef?.get()?.resetTextureView()
     }
 

@@ -33,4 +33,5 @@
     <string name="video_frame">Video Frame</string>
     <string name="image_crop">图片裁切</string>
     <string name="rect_process_view">Rect Process View</string>
+    <string name="go_animation">Animation View</string>
 </resources>

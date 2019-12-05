@@ -10,8 +10,8 @@ import tank.com.kotlin.model.MainVideoBean
 
 class IntentUtil {
     companion object {
-        val INTENT_DATA_LIST = "intent_data_list"
-        val INTENT_PLAY_POSITION = "intent_play_position"
+        const val INTENT_DATA_LIST = "intent_data_list"
+        const val INTENT_PLAY_POSITION = "intent_play_position"
 
         fun gotoVideoPlayerDetailActivity(activity: Activity, videoBeanList:ArrayList<MainVideoBean>,position:Int ,animation: View) {
             val intent = Intent(activity, VideoDetailActivity::class.java)

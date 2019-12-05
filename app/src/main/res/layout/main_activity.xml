@@ -34,6 +34,13 @@
             android:textStyle="bold" />
     </RelativeLayout>
 
+    <Button
+        android:id="@+id/goAnimationBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/show_permission_padding"
+        android:text="@string/go_animation" />
+
 
     <Button
         android:id="@+id/goSurfaceViewBt"

@@ -40,6 +40,10 @@ class MainActivity : AppCompatActivity() {
 
         checkPermission()
 
+        findViewById<Button>(R.id.goAnimationBt).setOnClickListener {
+            startActivity(Intent(applicationContext, AnimationActivity::class.java))
+        }
+
         findViewById<Button>(R.id.goSurfaceViewBt).setOnClickListener {
             startActivity(Intent(applicationContext, SurfaceViewActivity::class.java))
         }
@@ -83,17 +87,17 @@ class MainActivity : AppCompatActivity() {
 
 
         val pvDatePicker: TimePickerView = TimePickerView.Builder(this,
-                TimePickerView.OnTimeSelectListener { date, v ->
-                    val dateStr = android.text.format.DateFormat.format("yyyy-MM-dd", date.time)
+            TimePickerView.OnTimeSelectListener { date, v ->
+                val dateStr = android.text.format.DateFormat.format("yyyy-MM-dd", date.time)
 
-                    Toast.makeText(applicationContext, "$dateStr", Toast.LENGTH_LONG).show()
-                })
-                .setType(TimePickerView.Type.YEAR_MONTH_DAY).setLabel("", "", "", "", "", "")
-                .setCancelColor(Color.GRAY)
-                .isCenterLabel(true)
-                .setRange(1900, year)
-                .setTitleText("生日")
-                .build()
+                Toast.makeText(applicationContext, "$dateStr", Toast.LENGTH_LONG).show()
+            })
+            .setType(TimePickerView.Type.YEAR_MONTH_DAY).setLabel("", "", "", "", "", "")
+            .setCancelColor(Color.GRAY)
+            .isCenterLabel(true)
+            .setRange(1900, year)
+            .setTitleText("生日")
+            .build()
 
 
         pvDatePicker.setDate(calender)
@@ -132,11 +136,11 @@ class MainActivity : AppCompatActivity() {
 
     private fun showPermissionAlert(permissions: Array<String?>) {
         AlertDialog.Builder(this)
-                .setCancelable(true)
-                .setTitle(R.string.permission_required)
-                .setMessage(R.string.permission_message)
-                .setPositiveButton(android.R.string.yes) { _, _ -> requestPermissions(permissions) }
-                .create().show()
+            .setCancelable(true)
+            .setTitle(R.string.permission_required)
+            .setMessage(R.string.permission_message)
+            .setPositiveButton(android.R.string.yes) { _, _ -> requestPermissions(permissions) }
+            .create().show()
     }
 
     private fun requestPermissions(permissions: Array<String?>) {
@@ -156,7 +160,6 @@ class MainActivity : AppCompatActivity() {
         }
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
     }
-
 
 
     private lateinit var datePickerDialog: DatePickerDialog
