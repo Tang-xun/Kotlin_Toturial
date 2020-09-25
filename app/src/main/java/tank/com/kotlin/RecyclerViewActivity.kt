@@ -2,11 +2,12 @@ package tank.com.kotlin
 
 import android.content.Context
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.*
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.widget.*
 import android.util.Log
 import android.view.*
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import tank.com.kotlin.adapter.RecyclerAdapter
 import tank.com.kotlin.model.Animal
 
@@ -20,7 +21,7 @@ class RecyclerViewActivity : AppCompatActivity() {
 
     private var recyclerAdapter: RecyclerAdapter? = null
 
-    private var snapHelper: LinearSnapHelper? = null
+    private var snapHelper: androidx.recyclerview.widget.LinearSnapHelper? = null
 
     private var animals: ArrayList<Animal> = ArrayList<Animal>()
 
@@ -31,12 +32,12 @@ class RecyclerViewActivity : AppCompatActivity() {
         createAnimalList()
 
         recyclerView = findViewById(R.id.animal_recycle_view_list)
-        recyclerView!!.layoutManager = LinearLayoutManager(this)
+        recyclerView!!.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
 
         recyclerAdapter = RecyclerAdapter(animals, R.layout.recycler_list_item)
         recyclerView!!.adapter = recyclerAdapter
 
-        snapHelper = LinearSnapHelper()
+        snapHelper = androidx.recyclerview.widget.LinearSnapHelper()
 
         recyclerView!!.addOnItemTouchListener(RecyclerTouchListener(applicationContext, recyclerView!!, object : IClickListener {
             override fun onClick(view: View, position: Int) {
@@ -61,25 +62,25 @@ class RecyclerViewActivity : AppCompatActivity() {
         val spanCount = 2
         when (item!!.itemId) {
             R.id.linearVertical -> {
-                recyclerView!!.layoutManager = LinearLayoutManager(this)
+                recyclerView!!.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
             }
             R.id.linearHorizontal -> {
                 layoutId = R.layout.recycler_list_item_horizontal
-                recyclerView!!.layoutManager = LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false)
+                recyclerView!!.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this, androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL, false)
             }
             R.id.gridviewVertical -> {
-                recyclerView!!.layoutManager = GridLayoutManager(this, spanCount)
+                recyclerView!!.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, spanCount)
             }
             R.id.gridviewHorizontal -> {
                 layoutId = R.layout.recycler_list_item_horizontal
-                recyclerView!!.layoutManager = GridLayoutManager(this, spanCount, LinearLayoutManager.HORIZONTAL, false)
+                recyclerView!!.layoutManager = androidx.recyclerview.widget.GridLayoutManager(this, spanCount, androidx.recyclerview.widget.LinearLayoutManager.HORIZONTAL, false)
             }
             R.id.staggeredGridviewVertical -> {
-                recyclerView!!.layoutManager = StaggeredGridLayoutManager(spanCount, StaggeredGridLayoutManager.VERTICAL)
+                recyclerView!!.layoutManager = androidx.recyclerview.widget.StaggeredGridLayoutManager(spanCount, androidx.recyclerview.widget.StaggeredGridLayoutManager.VERTICAL)
             }
             R.id.staggeredGridviewHorizontal -> {
                 layoutId = R.layout.recycler_list_item_horizontal
-                recyclerView!!.layoutManager = StaggeredGridLayoutManager(spanCount, StaggeredGridLayoutManager.HORIZONTAL)
+                recyclerView!!.layoutManager = androidx.recyclerview.widget.StaggeredGridLayoutManager(spanCount, androidx.recyclerview.widget.StaggeredGridLayoutManager.HORIZONTAL)
             }
         }
 
@@ -158,8 +159,10 @@ class RecyclerViewActivity : AppCompatActivity() {
         init {
             gestureDetector = GestureDetector(context, object : GestureDetector.SimpleOnGestureListener() {
                 override fun onLongPress(e: MotionEvent?) {
-                    val child: View = recyclerView.findChildViewUnder(e!!.x, e.y);
+                    val child: View? = recyclerView.findChildViewUnder(e!!.x, e.y);
+                  if (child != null) {
                     clickListener.onLongClick(child, recyclerView.getChildAdapterPosition(child))
+                  }
                 }
 
                 override fun onSingleTapUp(e: MotionEvent?): Boolean {
@@ -168,12 +171,12 @@ class RecyclerViewActivity : AppCompatActivity() {
             })
         }
 
-        override fun onTouchEvent(rv: RecyclerView?, e: MotionEvent?) {
+        override fun onTouchEvent(rv: RecyclerView, e: MotionEvent) {
             Log.i(TAG, "onTouchEvent $rv $e")
         }
 
-        override fun onInterceptTouchEvent(rv: RecyclerView?, e: MotionEvent?): Boolean {
-            val child: View? = rv!!.findChildViewUnder(e!!.x, e.y)
+        override fun onInterceptTouchEvent(rv: RecyclerView, e: MotionEvent): Boolean {
+            val child: View? = rv.findChildViewUnder(e.x, e.y)
             if (child != null && gestureDetector.onTouchEvent(e)) {
                 clickListener.onClick(child, rv.getChildAdapterPosition(child))
             }

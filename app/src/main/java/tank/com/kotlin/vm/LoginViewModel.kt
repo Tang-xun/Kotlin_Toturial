@@ -1,7 +1,7 @@
 package tank.com.kotlin.vm
 
-import android.arch.lifecycle.MutableLiveData
-import android.arch.lifecycle.ViewModel
+import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import android.util.Log
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -29,12 +29,12 @@ class LoginViewModel : ViewModel() {
                     .addHeader("appId", "10001")
                     .get()
                     .build()
-            val response: Response = mClient.newCall(request).execute()
+            val response: Response = mClient.newCall(request!!).execute()
 
             if (response.isSuccessful) {
-                Log.i(TAG, "request success " + response.code() + "\t" + response.message())
+                Log.i(TAG, "request success " + response.code + "\t" + response.message)
             } else {
-                Log.i(TAG, "request fail " + response.code() + "\t" + response.message())
+                Log.i(TAG, "request fail " + response.code + "\t" + response.message)
             }
         }
     }

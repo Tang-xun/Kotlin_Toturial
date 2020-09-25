@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+  xmlns:app="http://schemas.android.com/apk/res-auto"
+  xmlns:tools="http://schemas.android.com/tools"
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  tools:context=".FrameReplaceActivity">
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_1"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:layout_constraintGuide_percent="0.5" />
+
+  <ImageView
+    android:id="@+id/pre_image"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="8dp"
+    android:orientation="vertical"
+    android:src="@mipmap/replace_frame_origin"
+    app:layout_constraintBottom_toTopOf="@id/guideline_1"
+    app:layout_constraintEnd_toStartOf="@id/guideline_2"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <androidx.constraintlayout.widget.Guideline
+    android:id="@+id/guideline_2"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.5" />
+
+  <ImageView
+    android:id="@+id/replace_shape"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="8dp"
+    android:src="@mipmap/replace_shape"
+    app:layout_constraintBottom_toTopOf="@id/guideline_1"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@id/guideline_2"
+    app:layout_constraintTop_toTopOf="parent" />
+
+  <Button
+    android:id="@+id/glsl_change"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/glsl_replace"
+    app:layout_constraintBottom_toTopOf="@id/blend_change"
+    app:layout_constraintEnd_toStartOf="@id/guideline_2"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/guideline_1" />
+
+  <Button
+    android:id="@+id/blend_change"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/blend_replace"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toStartOf="@id/guideline_2"
+    app:layout_constraintHorizontal_bias="0.5"
+    app:layout_constraintStart_toStartOf="parent"
+    app:layout_constraintTop_toBottomOf="@id/glsl_change" />
+
+  <ImageView
+    android:id="@+id/replace_result"
+    android:layout_width="0dp"
+    android:layout_height="0dp"
+    android:layout_margin="8dp"
+    android:src="@mipmap/replace_material_tree"
+    app:layout_constraintBottom_toBottomOf="parent"
+    app:layout_constraintEnd_toEndOf="parent"
+    app:layout_constraintStart_toStartOf="@id/guideline_2"
+    app:layout_constraintTop_toBottomOf="@id/replace_shape" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

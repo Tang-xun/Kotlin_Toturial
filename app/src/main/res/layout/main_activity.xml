@@ -1,100 +1,105 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:paddingStart="20dp"
-    android:paddingEnd="20dp">
+  android:layout_width="match_parent"
+  android:layout_height="match_parent"
+  android:orientation="vertical"
+  android:paddingStart="20dp"
+  android:paddingEnd="20dp">
 
     <RelativeLayout
-        android:layout_width="87dp"
-        android:layout_height="87dp"
-        android:layout_gravity="center_horizontal">
+      android:layout_width="87dp"
+      android:layout_height="87dp"
+      android:layout_gravity="center_horizontal">
 
         <ImageView
-            android:id="@+id/user_head"
-            android:layout_width="87dp"
-            android:backgroundTintMode="multiply"
-            android:background="@drawable/user_head_mask_bg"
-            android:layout_height="87dp"
-            android:layout_centerInParent="true"
-            android:src="@drawable/login_qq_normal" />
+          android:id="@+id/user_head"
+          android:layout_width="87dp"
+          android:layout_height="87dp"
+          android:layout_centerInParent="true"
+          android:background="@drawable/user_head_mask_bg"
+          android:backgroundTintMode="multiply"
+          android:src="@drawable/login_qq_normal" />
 
         <TextView
-            android:layout_width="78dp"
-            android:layout_height="23dp"
-            android:layout_centerHorizontal="true"
-            android:layout_alignParentBottom="true"
-            android:gravity="center"
-            android:textAlignment="center"
-            android:text="更 新"
-            android:textColor="@android:color/white"
-            android:textSize="12sp"
-            android:textStyle="bold" />
+          android:layout_width="78dp"
+          android:layout_height="23dp"
+          android:layout_alignParentBottom="true"
+          android:layout_centerHorizontal="true"
+          android:gravity="center"
+          android:text="更 新"
+          android:textAlignment="center"
+          android:textColor="@android:color/white"
+          android:textSize="12sp"
+          android:textStyle="bold" />
     </RelativeLayout>
 
 
     <Button
-        android:id="@+id/goSurfaceViewBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/show_permission_padding"
-        android:text="@string/go_surface_view" />
+      android:id="@+id/goSurfaceViewBt"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="@dimen/show_permission_padding"
+      android:text="@string/go_surface_view" />
 
 
     <Button
-        android:id="@+id/goExpendViewBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/go_expandable_list_view" />
+      android:id="@+id/goExpendViewBt"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/go_expandable_list_view" />
 
     <Button
-        android:id="@+id/goRecyclerViewBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/go_recycler_view" />
+      android:id="@+id/goRecyclerViewBt"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/go_recycler_view" />
 
     <Button
-        android:id="@+id/goQRScanBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/qr_scan_view" />
+      android:id="@+id/goQRScanBt"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/qr_scan_view" />
 
     <Button
-        android:id="@+id/goIJKPlayer"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/ijkplayer_view" />
+      android:id="@+id/goIJKPlayer"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/ijkplayer_view" />
 
     <Button
-        android:id="@+id/goCirclePieView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/circle_pie_view" />
+      android:id="@+id/goCirclePieView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/circle_pie_view" />
 
     <Button
-        android:id="@+id/goRectProcessView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/rect_process_view" />
+      android:id="@+id/goRectProcessView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/rect_process_view" />
 
     <Button
-        android:id="@+id/datePickBt"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/picker_date" />
+      android:id="@+id/datePickBt"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/picker_date" />
 
     <Button
-        android:id="@+id/goVideoFrame"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/video_frame" />
+      android:id="@+id/goVideoFrame"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/video_frame" />
 
     <Button
-        android:id="@+id/goImageCrop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/video_frame" />
+      android:id="@+id/goImageCrop"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/video_frame" />
+
+    <Button
+      android:id="@+id/goRulerView"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:text="@string/ruler_view" />
 
 </LinearLayout>

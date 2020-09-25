@@ -11,7 +11,7 @@
         android:layout_centerInParent="true"
         android:background="@drawable/hollow_rectangle_bg" />
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/pic_frame_layout"
         android:layout_width="match_parent"
         android:layout_height="60dp"
