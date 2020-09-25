@@ -2,8 +2,8 @@ package tank.com.kotlin.utils
 
 import android.app.Activity
 import android.content.Intent
-import android.support.v4.app.ActivityCompat
-import android.support.v4.app.ActivityOptionsCompat
+import androidx.core.app.ActivityCompat
+import androidx.core.app.ActivityOptionsCompat
 import android.view.View
 import tank.com.kotlin.VideoDetailActivity
 import tank.com.kotlin.model.MainVideoBean

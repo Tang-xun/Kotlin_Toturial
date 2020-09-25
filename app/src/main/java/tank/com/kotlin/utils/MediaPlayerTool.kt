@@ -1,6 +1,6 @@
 package tank.com.kotlin.utils
 
-import android.arch.lifecycle.MutableLiveData
+import androidx.lifecycle.MutableLiveData
 import android.graphics.SurfaceTexture
 import android.os.Binder
 import android.os.Handler

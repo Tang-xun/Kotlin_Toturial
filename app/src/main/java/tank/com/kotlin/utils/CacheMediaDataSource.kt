@@ -5,6 +5,7 @@ import okhttp3.Request
 import tank.com.kotlin.MainApplication
 import tv.danmaku.ijk.media.player.misc.IMediaDataSource
 import java.io.*
+import kotlin.jvm.Throws
 
 class CacheMediaDataSource(url: String) : IMediaDataSource {
 
@@ -137,10 +138,10 @@ class CacheMediaDataSource(url: String) : IMediaDataSource {
 
     private fun openHttpClient(startIndex: Int): InputStream? {
         OkHttpClient().newCall(Request.Builder()
-                .header("RANGE", "bytes=$startIndex-")
-                .url(mUrl)
-                .get()
-                .build()).execute().body()?.let {
+                      .header("RANGE", "bytes=$startIndex-")
+                      .url(mUrl)
+                      .get()
+                      .build()).execute().body?.let {
             contentLength = it.contentLength() + startIndex
             return it.byteStream()
         }

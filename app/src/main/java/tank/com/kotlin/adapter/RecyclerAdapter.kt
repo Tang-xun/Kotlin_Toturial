@@ -1,6 +1,6 @@
 package tank.com.kotlin.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater.from
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +36,7 @@ open class RecyclerAdapter(animals: ArrayList<Animal>, layoutId: Int) : Recycler
         holder.animal_details!!.text = (listAnimal!![position].animal_details)
     }
 
-    class AnimalViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView) {
+    class AnimalViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView!!) {
         var animal_name: TextView? = null
         var animal_details: TextView? = null
 

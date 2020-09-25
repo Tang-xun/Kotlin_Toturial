@@ -4,7 +4,7 @@ import android.annotation.SuppressLint
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.TransitionOptions
@@ -59,11 +59,9 @@ class ImageCropActivity : AppCompatActivity() {
             width = height * 9 / 16
         }
 
-
-
         Glide.with(this).asBitmap().load(IMAGE_PATH).into(mOImageView)
 
-        Glide.with(this).asBitmap().load(IMAGE_PATH).isMemoryCacheable(false).override(width, height).into(mCenterCrop)
+        Glide.with(this).asBitmap().load(IMAGE_PATH).override(width, height).into(mCenterCrop)
 
         Glide.with(this).asBitmap().load(IMAGE_PATH).override(160, 90).into(mFitWith)
 

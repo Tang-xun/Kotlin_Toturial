@@ -2,9 +2,9 @@ package tank.com.kotlin
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.PagerSnapHelper
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.PagerSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.widget.ImageView
 import tank.com.kotlin.adapter.VideoDetailAdapter
@@ -38,9 +38,9 @@ class VideoDetailActivity : BaseActivity() {
 
     private var mVideoDetailRv: RecyclerView? = null
 
-    private var pagerSnapHelper: PagerSnapHelper? = null
+    private var pagerSnapHelper: androidx.recyclerview.widget.PagerSnapHelper? = null
 
-    private var linearLayoutManager: LinearLayoutManager? = null
+    private var linearLayoutManager: androidx.recyclerview.widget.LinearLayoutManager? = null
 
     private var mIvClose: ImageView? = null
     private fun initIntent() {
@@ -55,16 +55,16 @@ class VideoDetailActivity : BaseActivity() {
         mVideoDetailRv = findViewById(R.id.videoDetailRv)
         mIvClose = findViewById(R.id.videoIVClose)
 
-        linearLayoutManager = LinearLayoutManager(this)
+        linearLayoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
         mVideoDetailRv?.layoutManager = linearLayoutManager
 
-        pagerSnapHelper = PagerSnapHelper()
+        pagerSnapHelper = androidx.recyclerview.widget.PagerSnapHelper()
         pagerSnapHelper?.attachToRecyclerView(mVideoDetailRv)
         mVideoDetailRv?.adapter = VideoDetailAdapter(this, mainVideoBeans!!)
 
         mVideoDetailRv?.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     if (pagerSnapHelper?.findSnapView(linearLayoutManager) != mPlayView) {
                         playVisibleVideo(false)

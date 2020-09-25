@@ -2,9 +2,9 @@ package tank.com.kotlin
 
 import android.graphics.Rect
 import android.os.Bundle
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.LinearSnapHelper
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.LinearSnapHelper
+import androidx.recyclerview.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import com.yanzhenjie.permission.AndPermission
@@ -26,7 +26,7 @@ open class IJKPlayerActivity : BaseActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.ijk_player_activity)
         videoRecycleView = findViewById(R.id.videosRecyclerView)
-        videoRecycleView!!.layoutManager = LinearLayoutManager(this)
+        videoRecycleView!!.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(this)
 
         // create data source
         mMediaDataBeans = MainVideoBean.generateVideoData()
@@ -36,16 +36,16 @@ open class IJKPlayerActivity : BaseActivity() {
         LinearSnapHelper().attachToRecyclerView(videoRecycleView)
 
         videoRecycleView!!.addItemDecoration(object : RecyclerView.ItemDecoration() {
-            override fun getItemOffsets(outRect: Rect?, view: View?, parent: RecyclerView?, state: RecyclerView.State?) {
-                val position = parent?.getChildAdapterPosition(view)
-                if (position != null && position > 0) {
-                    outRect!!.top = resources.getDimension(R.dimen.dialog_margin).toInt()
-                }
+          override fun getItemOffsets(outRect: Rect, view: View, parent: RecyclerView, state: RecyclerView.State) {
+            val position = parent.getChildAdapterPosition(view)
+            if (position > 0) {
+              outRect.top = resources.getDimension(R.dimen.dialog_margin).toInt()
             }
+          }
         })
 
         videoRecycleView!!.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 currentPlayView?.let {
                     val playRange: Boolean = isPlayRange(currentPlayView, recyclerView)
 
@@ -55,8 +55,7 @@ open class IJKPlayerActivity : BaseActivity() {
                 }
             }
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
-
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 if (newState == RecyclerView.SCROLL_STATE_IDLE) {
                     checkPlayVideo()
                     if (currentPlayView == null) {

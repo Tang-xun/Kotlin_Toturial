@@ -2,9 +2,9 @@ package tank.com.kotlin.adapter
 
 import android.content.Context
 import android.graphics.PorterDuff
-import android.support.v4.content.ContextCompat
-import android.support.v4.content.ContextCompat.*
-import android.support.v7.widget.RecyclerView
+import androidx.core.content.ContextCompat
+import androidx.core.content.ContextCompat.*
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -18,9 +18,9 @@ import tank.com.kotlin.utils.CommonUtil
 import tank.com.kotlin.view.PlayTextureView
 import tank.com.kotlin.view.VideoTouchView
 
-class VideoDetailAdapter(private val mContext: Context, private val mainVideoBeans: ArrayList<MainVideoBean>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class VideoDetailAdapter(private val mContext: Context, private val mainVideoBeans: ArrayList<MainVideoBean>) : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
         return VdViewHolder(mContext, View.inflate(mContext, R.layout.video_item_detail, null))
     }
 
@@ -28,7 +28,7 @@ class VideoDetailAdapter(private val mContext: Context, private val mainVideoBea
         return mainVideoBeans.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         val vh = holder as VdViewHolder
 
         val bean = mainVideoBeans[position]
@@ -61,7 +61,7 @@ class VideoDetailAdapter(private val mContext: Context, private val mainVideoBea
         vh.videoTouchView!!.layoutParams = layoutParams
     }
 
-    class VdViewHolder(context: Context, itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class VdViewHolder(context: Context, itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
         var videoTouchView: VideoTouchView? = null
         var ivCover: ImageView? = null
         var playTextureView: PlayTextureView? = null

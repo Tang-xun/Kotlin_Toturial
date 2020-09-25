@@ -2,8 +2,8 @@ package tank.com.kotlin.adapter
 
 import android.app.Activity
 import android.content.Context
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.RecyclerView.Adapter
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView.Adapter
 import android.util.Log
 import android.view.View
 import android.view.ViewGroup
@@ -57,7 +57,7 @@ class MainVideoAdapter(activity: IJKPlayerActivity, mainVideoBeans: ArrayList<Ma
     }
 
 
-    class VideoViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+    class VideoViewHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
         var relativeLayout: RelativeLayout? = null
         var playTextureView: PlayTextureView? = null

@@ -31,6 +31,7 @@
     <string name="process_change_bt">change</string>
     <string name="picker_date">Picker Date</string>
     <string name="video_frame">Video Frame</string>
+    <string name="ruler_view">Ruler View</string>
     <string name="image_crop">图片裁切</string>
-    <string name="rect_process_view">Rect Process View</string>
+    <string name="rect_process_view">Rect Process View</string><string name="glsl_replace">glsl_replace</string><string name="blend_replace">blend_replace</string>
 </resources>
